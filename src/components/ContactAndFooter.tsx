@@ -58,7 +58,10 @@ export function ContactAndFooter() {
   return (
     <>
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-16 sm:py-20">
+      <section
+        id="contact"
+        className="border-t border-slate-200/80 bg-white py-16 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">

@@ -1,23 +1,11 @@
 /**
  * Editable portfolio content for Sadia Shahzadi.
- * Update text, links, or image paths (/assets/...) here without touching UI components.
- * All image files reside in /public/assets/ organized by folder:
- *   - /public/assets/websites/
- *   - /public/assets/social/
- *   - /public/assets/design/
- *   - /public/assets/documents/
+ * Update text, links, or media paths here without touching UI components.
  */
 
 export interface NavItem {
   label: string;
   href: string;
-}
-
-export interface ServiceItem {
-  id: string;
-  title: string;
-  description: string;
-  icon: 'coordination' | 'web' | 'social' | 'design' | 'video' | 'ecommerce';
 }
 
 export interface WebsiteProject {
@@ -27,9 +15,7 @@ export interface WebsiteProject {
   displayDomain: string;
   description: string;
   techStack: string[];
-  /** Live screenshot service URL; falls back cleanly to a browser-window mockup if unavailable */
   screenshotUrl: string;
-  /** Optional local override image path in /assets/websites/ */
   localFallbackImage?: string;
   highlights: string[];
   accentTone: 'teal' | 'slate' | 'emerald';
@@ -43,20 +29,12 @@ export interface GalleryItem {
   image: string;
   alt: string;
   client?: string;
-  aspect?: 'square' | 'portrait' | 'landscape' | 'wide';
 }
 
 export interface LiveProfileLink {
   id: string;
   label: string;
   url: string;
-}
-
-export interface AdminWorkItem {
-  id: string;
-  title: string;
-  description: string;
-  icon: 'attendance' | 'excel' | 'reports' | 'events' | 'exams';
 }
 
 export interface ExperienceItem {
@@ -69,20 +47,12 @@ export interface ExperienceItem {
   current?: boolean;
 }
 
-export interface SkillGroup {
-  id: string;
-  category: string;
-  items: string[];
-}
-
 export const portfolioContent = {
   navigation: {
     brand: 'Sadia Shahzadi',
     links: [
-      {label: 'About', href: '#about'},
-      {label: 'Services', href: '#services'},
       {label: 'Websites', href: '#websites'},
-      {label: 'Portfolio', href: '#social-media'},
+      {label: 'Social Media', href: '#social-media'},
       {label: 'Experience', href: '#experience'},
     ] as NavItem[],
     cta: {
@@ -97,11 +67,17 @@ export const portfolioContent = {
     subtitle:
       'Computer Science Educator · Full-Stack Developer · Digital Marketing Specialist',
     summary:
-      'Supporting educational institutions with structured quality assurance, academic record-keeping, and classroom instruction—alongside full-stack web development and digital media execution.',
+      'Academic and administrative professional with experience in the Quality Enhancement Cell (QEC) at Mukabbir University of Science & Technology (MUST), Gujrat—alongside teaching Computer Science, full-stack web development, and digital marketing.',
     primaryAction: {
       label: 'View My Work',
       href: '#websites',
     },
+    secondaryAction: {
+      label: 'Download CV',
+      href: '/cv.pdf',
+    },
+    educationText:
+      'Bachelor of Science in Computer Science (BSCS), Virtual University of Pakistan, 2022 - 2026',
     pillars: [
       {
         label: 'Academic Operations',
@@ -123,71 +99,6 @@ export const portfolioContent = {
     whatsappUrl: 'https://wa.me/923450474651',
     location: 'Gujrat, Punjab, Pakistan',
     email: 'sadiashahzadi760@gmail.com',
-  },
-
-  about: {
-    heading: 'About Me',
-    paragraphs: [
-      'Academic and administrative professional with experience in the Quality Enhancement Cell (QEC) at Mukabbir University of Science & Technology (MUST), Gujrat, where I monitor classes, maintain attendance and academic records on Excel, and coordinate quality assurance activities. I have also worked as an Office Assistant handling lectures, attendance, LMS management, and institutional reports.',
-      'Alongside academic administration, I teach Computer Science and work as a freelance digital professional delivering social media management, paid ad campaigns, e-commerce support, full-stack web development, and print/graphic design.',
-    ],
-    education: {
-      fullText:
-        'Bachelor of Science in Computer Science (BSCS), Virtual University of Pakistan, 2022 - 2026',
-      degree: 'Bachelor of Science in Computer Science (BSCS)',
-      institution: 'Virtual University of Pakistan',
-      period: '2022 - 2026',
-    },
-  },
-
-  services: {
-    heading: 'Services',
-    intro:
-      'Combining institutional academic coordination with practical technical and digital execution.',
-    items: [
-      {
-        id: 'academic-admin',
-        title: 'Academic & Administrative Coordination',
-        description:
-          'QEC monitoring, attendance and academic records on Excel, administrative reports, LMS handling, and campus event coordination.',
-        icon: 'coordination',
-      },
-      {
-        id: 'web-dev',
-        title: 'Web Development',
-        description:
-          'Responsive, fast institutional and business websites built with React, TypeScript, Node.js, Express, MySQL, and Tailwind CSS.',
-        icon: 'web',
-      },
-      {
-        id: 'social-ads',
-        title: 'Social Media Management & Paid Ads',
-        description:
-          'Content calendars, visual post design, scheduled publishing, and targeted paid ad campaigns tailored to schools and clinics.',
-        icon: 'social',
-      },
-      {
-        id: 'graphic-print',
-        title: 'Graphic & Print Design',
-        description:
-          'Clean print-ready layouts for institutional posters, flyers, and social media visuals.',
-        icon: 'design',
-      },
-      {
-        id: 'video-content',
-        title: 'Video Editing & Content Creation',
-        description:
-          'Short-form reels, educational clips, institutional highlights, and visual storytelling for digital channels.',
-        icon: 'video',
-      },
-      {
-        id: 'ecommerce',
-        title: 'E-commerce Services & Training',
-        description:
-          'Store setup, product research, and operational guidance across Shopify, Amazon, eBay, Alibaba, and dropshipping workflows.',
-        icon: 'ecommerce',
-      },
-    ] as ServiceItem[],
   },
 
   websites: {
@@ -241,97 +152,80 @@ export const portfolioContent = {
     heading: 'Social Media Management',
     intro:
       'Managed end-to-end social media for Dental Consultant (both clinic branches): monthly content planning, post design, publishing and paid ad campaigns.',
-    groups: [
+    posts: [
       {
-        id: 'dental-consultant-social',
-        clientName: 'Dental Consultant',
-        subtitle:
-          'Content planning, post design, publishing, and paid ad campaigns across both clinic branches',
-        posts: [
-          {
-            id: 'dc-post-1',
-            title: 'Dental imaging awareness post',
-            caption: 'Dental imaging awareness post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_d92fb887.png',
-            alt: 'Dental Consultant social media design: Dental imaging awareness post',
-          },
-          {
-            id: 'dc-post-2',
-            title: 'Doctor introduction and services post',
-            caption: 'Doctor introduction and services post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_ef1b0c15.png',
-            alt: 'Dental Consultant social media design: Doctor introduction and services post',
-          },
-          {
-            id: 'dc-post-3',
-            title: 'Clinic services and contact banner',
-            caption: 'Clinic services and contact banner',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_2eedd5f3.png',
-            alt: 'Dental Consultant social media design: Clinic services and contact banner',
-          },
-          {
-            id: 'dc-post-4',
-            title: 'Oral hygiene tips post',
-            caption: 'Oral hygiene tips post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_5df64d3e.png',
-            alt: 'Dental Consultant social media design: Oral hygiene tips post',
-          },
-          {
-            id: 'dc-post-5',
-            title: 'Root canal treatment awareness post',
-            caption: 'Root canal treatment awareness post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_50319af5.png',
-            alt: 'Dental Consultant social media design: Root canal treatment awareness post',
-          },
-          {
-            id: 'dc-post-6',
-            title: 'Dental wellness journey post',
-            caption: 'Dental wellness journey post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_c932100d.png',
-            alt: 'Dental Consultant social media design: Dental wellness journey post',
-          },
-          {
-            id: 'dc-post-7',
-            title: '"5 signs to visit your dentist" post',
-            caption: '"5 signs to visit your dentist" post',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_93c8e868.png',
-            alt: 'Dental Consultant social media design: 5 signs to visit your dentist post',
-          },
-          {
-            id: 'dc-post-8',
-            title: 'Complete services flyer',
-            caption: 'Complete services flyer',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_7d005e03.png',
-            alt: 'Dental Consultant social media design: Complete services flyer',
-          },
-          {
-            id: 'dc-post-9',
-            title: 'Social media QR connect poster',
-            caption: 'Social media QR connect poster',
-            category: 'Dental Consultant',
-            client: 'Dental Consultant',
-            image: '/assets/aistudio/image_9b5cc33a.png',
-            alt: 'Dental Consultant social media design: Social media QR connect poster',
-          },
-        ] as GalleryItem[],
+        id: 'post-dental-imaging',
+        title: 'Digital dental imaging awareness post',
+        caption: 'Digital dental imaging awareness post',
+        category: 'Social Media Post',
+        client: 'Dental Consultant',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.07_AM_7bc2524e.jpeg',
+        alt: 'Dental Consultant social media post explaining digital dental imaging and X-rays',
       },
-    ],
+      {
+        id: 'post-orthodontic',
+        title: 'Orthodontic treatment promotion',
+        caption: 'Orthodontic treatment promotion',
+        category: 'Social Media Post',
+        client: 'Dental Consultant',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.08_AM_45e9c5d8.jpeg',
+        alt: 'Dental Consultant promotional post for orthodontic braces and aligners',
+      },
+      {
+        id: 'post-sensitive-teeth',
+        title: 'Sensitive teeth awareness & care tips',
+        caption: 'Sensitive teeth awareness & care tips',
+        category: 'Educational Post',
+        client: 'Dental Consultant',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.07_AM__1__ee47fdf0.jpeg',
+        alt: 'Dental Consultant educational post on causes and care for sensitive teeth',
+      },
+      {
+        id: 'post-services-flyer',
+        title: 'Complete services flyer',
+        caption: 'Complete services flyer',
+        category: 'Flyer',
+        client: 'Dental Consultant',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.05_AM_f601db37.jpeg',
+        alt: 'Dental Consultant complete services flyer featuring treatments and clinic contact details',
+      },
+      {
+        id: 'post-qr-connect',
+        title: 'Social media QR connect poster',
+        caption: 'Social media QR connect poster',
+        category: 'QR Poster',
+        client: 'Dental Consultant',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-24_at_8.25.20_AM_737f58a9.jpeg',
+        alt: 'Dental Consultants connect with us poster featuring QR codes for Instagram, Facebook, Website, and Google',
+      },
+      {
+        id: 'post-zr-xrays',
+        title: 'Dental X-rays benefits post',
+        caption: 'Dental X-rays benefits post',
+        category: 'Educational Post',
+        client: 'ZR Dental Clinic',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.06_AM__1__edd760dc.jpeg',
+        alt: 'ZR Dental Clinic infographic highlighting benefits of dental X-rays',
+      },
+      {
+        id: 'post-zr-flyer',
+        title: 'Clinic services & specialist flyer',
+        caption: 'Clinic services & specialist flyer',
+        category: 'Flyer',
+        client: 'ZR Dental Clinic',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.05_AM__1__04ccef7f.jpeg',
+        alt: 'ZR Dental Clinic services flyer featuring Dr. Muhammad Abdullah and treatments',
+      },
+      {
+        id: 'post-zr-standee',
+        title: 'Clinic roll-up standee banner',
+        caption: 'Clinic roll-up standee banner',
+        category: 'Standee Banner',
+        client: 'ZR Dental Clinic',
+        image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.06_AM_52a3f27f.jpeg',
+        alt: 'ZR Dental Clinic roll-up standee design showcasing clinic services and specialist profile',
+      },
+    ] as GalleryItem[],
     livePages: {
       heading: 'See the live pages',
       links: [
@@ -358,102 +252,6 @@ export const portfolioContent = {
       ] as LiveProfileLink[],
       note: "Search 'Dental Consultants Gujrat' on Google, Instagram or Facebook to see the live pages.",
     },
-  },
-
-  graphicDesign: {
-    heading: 'Graphic & Print Design',
-    intro:
-      'Print-ready flyers and posters designed for Dental Consultant. Click any piece to inspect it in full view.',
-    categories: ['All', 'Posters / Flyers'] as const,
-    items: [
-      {
-        id: 'design-services-flyer',
-        title: 'Complete services flyer',
-        caption: 'Dental Consultant — clinic services print & digital flyer',
-        category: 'Posters / Flyers',
-        client: 'Dental Consultant',
-        image: '/assets/aistudio/image_7d005e03.png',
-        alt: 'Dental Consultant complete services flyer designed by Sadia Shahzadi',
-      },
-      {
-        id: 'design-qr-poster',
-        title: 'Social media QR connect poster',
-        caption: 'Dental Consultant — in-clinic QR connect poster',
-        category: 'Posters / Flyers',
-        client: 'Dental Consultant',
-        image: '/assets/aistudio/image_9b5cc33a.png',
-        alt: 'Dental Consultant social media QR connect poster designed by Sadia Shahzadi',
-      },
-    ] as GalleryItem[],
-  },
-
-  academicAdmin: {
-    heading: 'Academic & Administrative Work',
-    intro:
-      'Day-to-day operational discipline supporting faculty, students, and quality enhancement cells across school and university environments.',
-    responsibilities: [
-      {
-        id: 'class-monitoring',
-        title: 'Attendance Tracking & Class Monitoring',
-        description:
-          'Daily floor monitoring of scheduled lectures and systematic student attendance tracking.',
-        icon: 'attendance',
-      },
-      {
-        id: 'excel-records',
-        title: 'Academic Records on Excel',
-        description:
-          'Structured spreadsheets for attendance summaries, internal assessments, class schedules, and department compliance logs.',
-        icon: 'excel',
-      },
-      {
-        id: 'reports-lms',
-        title: 'Institutional Reports & LMS Handling',
-        description:
-          'Drafting periodic QEC and administrative reports, uploading course materials, and managing Learning Management System workflows.',
-        icon: 'reports',
-      },
-      {
-        id: 'event-coordination',
-        title: 'Campus Event Coordination',
-        description:
-          'Planning schedules, student participation, stage logistics, and visual collateral—including a 3-day Independence Day celebration at MUST.',
-        icon: 'events',
-      },
-      {
-        id: 'exam-duties',
-        title: 'Examination Supervision & Grading',
-        description:
-          'Served as Examiner at RCIS: preparing assessment schedules, overseeing exam conduct, checking answer scripts, and compiling results.',
-        icon: 'exams',
-      },
-    ] as AdminWorkItem[],
-    documentSamples: [
-      {
-        id: 'doc-qec-review',
-        title: 'QEC Program Review & Assessment Forms',
-        caption: 'Standardized QA review checklist & course log (blank template)',
-        category: 'QEC Documentation',
-        image: '/assets/documents/qec-academic-review-sample.jpg',
-        alt: 'Blank QEC academic program review and assessment data collection forms on a clipboard',
-      },
-      {
-        id: 'doc-attendance',
-        title: 'Monthly Attendance & Monitoring Register',
-        caption: 'Anonymized Excel structure for section-wise tracking',
-        category: 'Excel Tracking',
-        image: '/assets/documents/attendance-tracking-register.svg',
-        alt: 'Anonymized monthly attendance and class monitoring spreadsheet template without student names',
-      },
-      {
-        id: 'doc-exam-schedule',
-        title: 'Examination Supervision & Grading Checklist',
-        caption: 'Pre-exam readiness & marks verification workflow',
-        category: 'Examination Admin',
-        image: '/assets/documents/examination-duty-schedule.svg',
-        alt: 'Anonymized examination assessment and duty schedule workflow template',
-      },
-    ] as GalleryItem[],
   },
 
   experience: {
@@ -519,63 +317,6 @@ export const portfolioContent = {
         ],
       },
     ] as ExperienceItem[],
-  },
-
-  skills: {
-    heading: 'Skills',
-    groups: [
-      {
-        id: 'skills-admin',
-        category: 'Administration',
-        items: [
-          'Class monitoring',
-          'Quality assurance (QEC)',
-          'Attendance & records',
-          'Academic reports',
-          'Documentation',
-          'Event coordination',
-          'LMS handling',
-        ],
-      },
-      {
-        id: 'skills-tools',
-        category: 'Tools',
-        items: [
-          'Microsoft Office Suite',
-          'Microsoft Excel',
-          'Google Workspace',
-          'Zoom',
-          'Google Meet',
-          'Canva',
-          'PDF editing',
-        ],
-      },
-      {
-        id: 'skills-web',
-        category: 'Web',
-        items: [
-          'React',
-          'TypeScript',
-          'Node.js',
-          'Express',
-          'MySQL',
-          'Tailwind CSS',
-          'Hostinger',
-          'GoDaddy',
-        ],
-      },
-      {
-        id: 'skills-marketing',
-        category: 'Marketing & Design',
-        items: [
-          'Social media management',
-          'Paid ads',
-          'Print design',
-          'Video editing',
-          'E-commerce workflows',
-        ],
-      },
-    ] as SkillGroup[],
   },
 
   contact: {

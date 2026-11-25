@@ -1,8 +1,8 @@
-import {ArrowDownRight, Mail, MapPin, Phone} from 'lucide-react';
+import {ArrowDownRight, Download, Mail, MapPin, Phone} from 'lucide-react';
 import {portfolioContent} from '../data/content';
 
 export function Hero() {
-  const {hero, contactInfo, about} = portfolioContent;
+  const {hero, contactInfo} = portfolioContent;
 
   return (
     <section
@@ -33,10 +33,19 @@ export function Hero() {
               <div className="mt-8 flex flex-wrap items-center gap-3.5">
                 <a
                   href={hero.primaryAction.href}
-                  className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-[#0F766E] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#115E59] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F766E]"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-[#0F766E] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#115E59] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F766E]"
                 >
                   <span>{hero.primaryAction.label}</span>
                   <ArrowDownRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+
+                <a
+                  href={hero.secondaryAction.href}
+                  download="Sadia-Shahzadi-CV.pdf"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border-2 border-[#0F766E] bg-white px-5 py-2.5 text-sm font-semibold text-[#0F766E] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0F766E]/5 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F766E]"
+                >
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  <span>{hero.secondaryAction.label}</span>
                 </a>
               </div>
             </div>
@@ -101,7 +110,7 @@ export function Hero() {
               <div className="mt-6 border-t border-slate-200 pt-5">
                 <p className="text-xs font-medium text-slate-500">Education</p>
                 <p className="mt-1 text-sm font-semibold text-slate-900">
-                  {about.education.fullText}
+                  {hero.educationText}
                 </p>
               </div>
             </div>

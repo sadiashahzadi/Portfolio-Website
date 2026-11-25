@@ -3,11 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {AboutAndServices} from './components/AboutAndServices';
-import {AcademicAdminSection} from './components/AcademicAdminSection';
 import {ContactAndFooter} from './components/ContactAndFooter';
-import {ExperienceAndSkills} from './components/ExperienceAndSkills';
-import {GraphicDesignSection} from './components/GraphicDesignSection';
+import {ExperienceSection} from './components/ExperienceSection';
 import {Hero} from './components/Hero';
 import {Navbar} from './components/Navbar';
 import {SocialMediaSection} from './components/SocialMediaSection';
@@ -27,12 +24,9 @@ export default function App() {
 
       <main id="main-content">
         <Hero />
-        <AboutAndServices />
         <WebsitesSection />
         <SocialMediaSection />
-        <GraphicDesignSection />
-        <AcademicAdminSection />
-        <ExperienceAndSkills />
+        <ExperienceSection />
         <ContactAndFooter />
       </main>
     </div>
