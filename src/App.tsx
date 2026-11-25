@@ -12,10 +12,10 @@ import {WebsitesSection} from './components/WebsitesSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FAFBFB] text-[#0F172A]">
+    <div className="min-h-screen bg-[#FAFAFC] text-[#111827]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-[#0F766E] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-[#7657E8] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         Skip to content
       </a>

@@ -6,6 +6,7 @@
 export interface NavItem {
   label: string;
   href: string;
+  sectionId: string;
 }
 
 export interface WebsiteProject {
@@ -13,12 +14,13 @@ export interface WebsiteProject {
   name: string;
   url: string;
   displayDomain: string;
+  roleLabel: string;
   description: string;
   techStack: string[];
-  screenshotUrl: string;
-  localFallbackImage?: string;
+  desktopScreenshotUrl: string;
+  mobileScreenshotUrl: string;
   highlights: string[];
-  accentTone: 'teal' | 'slate' | 'emerald';
+  accentTone: 'purple' | 'teal' | 'navy';
 }
 
 export interface GalleryItem {
@@ -51,9 +53,9 @@ export const portfolioContent = {
   navigation: {
     brand: 'Sadia Shahzadi',
     links: [
-      {label: 'Websites', href: '#websites'},
-      {label: 'Social Media', href: '#social-media'},
-      {label: 'Experience', href: '#experience'},
+      {label: 'Websites', href: '#websites', sectionId: 'websites'},
+      {label: 'Social Media', href: '#social-media', sectionId: 'social-media'},
+      {label: 'Experience', href: '#experience', sectionId: 'experience'},
     ] as NavItem[],
     cta: {
       label: 'Contact',
@@ -62,12 +64,11 @@ export const portfolioContent = {
   },
 
   hero: {
-    name: 'SADIA SHAHZADI',
-    title: 'QEC & Academic Administration',
-    subtitle:
-      'Computer Science Educator · Full-Stack Developer · Digital Marketing Specialist',
+    kicker: 'Web Developer · Creative Designer · Digital Professional',
+    name: 'Sadia Shahzadi',
+    headline: 'Building fast web experiences, clean interfaces & digital brand presence.',
     summary:
-      'Academic and administrative professional with experience in the Quality Enhancement Cell (QEC) at Mukabbir University of Science & Technology (MUST), Gujrat—alongside teaching Computer Science, full-stack web development, and digital marketing.',
+      'Full-stack web developer and creative designer crafting responsive websites and visual campaigns—backed by hands-on experience in QEC & Academic Administration at Mukabbir University of Science & Technology (MUST) and Computer Science instruction.',
     primaryAction: {
       label: 'View My Work',
       href: '#websites',
@@ -78,20 +79,6 @@ export const portfolioContent = {
     },
     educationText:
       'Bachelor of Science in Computer Science (BSCS), Virtual University of Pakistan, 2022 - 2026',
-    pillars: [
-      {
-        label: 'Academic Operations',
-        detail: 'QEC compliance, attendance registers, Excel reporting & LMS coordination',
-      },
-      {
-        label: 'Computer Science Instruction',
-        detail: 'Structured curriculum delivery, practical labs & examination assessment',
-      },
-      {
-        label: 'Digital & Web Systems',
-        detail: 'Full-stack TypeScript/React sites, institutional branding & social campaigns',
-      },
-    ],
   },
 
   contactInfo: {
@@ -102,62 +89,71 @@ export const portfolioContent = {
   },
 
   websites: {
-    heading: 'Websites I Built',
+    heading: 'Featured Website Projects',
     intro:
-      'Production websites designed, developed, and deployed for local educational and healthcare organizations in Gujrat.',
+      'Production web platforms designed, developed, and deployed for education and healthcare organizations—featuring responsive desktop and mobile experiences.',
     items: [
       {
         id: 'giggles-n-glow',
-        name: 'Giggles n Glow Day Care',
+        name: 'Giggles & Glow',
         url: 'https://www.gigglesnglow.org',
         displayDomain: 'gigglesnglow.org',
+        roleLabel: 'Featured Project · Early Education Web Platform',
         description:
-          'Early childhood development and day care center in Gujrat combining structured early learning with play for ages 1–5, featuring program stages, gallery, testimonials, blog updates, and parent booking calls to action.',
+          'Early childhood development and day care center in Gujrat combining structured early learning with play for ages 1–5, featuring program stages, photo gallery, testimonials, blog updates, and parent booking calls to action.',
         techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Responsive UI'],
-        screenshotUrl:
-          'https://image.thum.io/get/width/1200/crop/800/https://www.gigglesnglow.org',
+        desktopScreenshotUrl:
+          'https://image.thum.io/get/width/1280/crop/800/https://www.gigglesnglow.org',
+        mobileScreenshotUrl:
+          'https://image.thum.io/get/width/400/crop/780/https://www.gigglesnglow.org',
         highlights: ['Programs for Ages 1–5', 'Gallery & Blog', 'Booking Calls to Action'],
-        accentTone: 'teal',
+        accentTone: 'purple',
       },
       {
         id: 'dental-consultant',
         name: 'Dental Consultant',
         url: 'https://www.dentalconsultant.clinic',
         displayDomain: 'dentalconsultant.clinic',
+        roleLabel: 'Healthcare Web Platform',
         description:
           'Multi-specialist dental clinic website in Gujrat presenting dental implants, pain-free root canal treatment, braces, clear aligners, specialist doctor profiles, clinic hours, and patient appointment inquiries.',
         techStack: ['React', 'TypeScript', 'Tailwind CSS', 'SEO & Schema'],
-        screenshotUrl:
-          'https://image.thum.io/get/width/1200/crop/800/https://www.dentalconsultant.clinic',
+        desktopScreenshotUrl:
+          'https://image.thum.io/get/width/1280/crop/800/https://www.dentalconsultant.clinic',
+        mobileScreenshotUrl:
+          'https://image.thum.io/get/width/400/crop/780/https://www.dentalconsultant.clinic',
         highlights: ['Specialist Profiles', 'Treatment Directory', 'Clinic Appointments'],
-        accentTone: 'slate',
+        accentTone: 'teal',
       },
       {
         id: 'g-academy',
-        name: 'G. Academy',
+        name: 'G-Academy',
         url: 'https://www.gacademy.education',
         displayDomain: 'gacademy.education',
+        roleLabel: 'Education Coaching Portal',
         description:
           'Coaching academy platform in Gujrat showcasing concept-based preparation across Matric, Intermediate (Pre-Medical, Pre-Engineering, ICS, Commerce), Cambridge O Level, A Level, and university-level academic streams.',
         techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Web Hosting'],
-        screenshotUrl:
-          'https://image.thum.io/get/width/1200/crop/800/https://www.gacademy.education',
+        desktopScreenshotUrl:
+          'https://image.thum.io/get/width/1280/crop/800/https://www.gacademy.education',
+        mobileScreenshotUrl:
+          'https://image.thum.io/get/width/400/crop/780/https://www.gacademy.education',
         highlights: ['Matric & Intermediate', 'O Level & A Level', 'Academic Admissions'],
-        accentTone: 'emerald',
+        accentTone: 'navy',
       },
     ] as WebsiteProject[],
   },
 
   socialMedia: {
-    heading: 'Social Media Management',
+    heading: 'Social Media Design Showcase',
     intro:
-      'Managed end-to-end social media for Dental Consultant (both clinic branches): monthly content planning, post design, publishing and paid ad campaigns.',
+      'End-to-end social media design, campaign graphics, clinic flyers, and standee visuals created for Dental Consultant (both clinic branches) and ZR Dental Clinic.',
     posts: [
       {
         id: 'post-dental-imaging',
         title: 'Digital dental imaging awareness post',
         caption: 'Digital dental imaging awareness post',
-        category: 'Social Media Post',
+        category: 'Awareness Post',
         client: 'Dental Consultant',
         image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.07_AM_7bc2524e.jpeg',
         alt: 'Dental Consultant social media post explaining digital dental imaging and X-rays',
@@ -166,7 +162,7 @@ export const portfolioContent = {
         id: 'post-orthodontic',
         title: 'Orthodontic treatment promotion',
         caption: 'Orthodontic treatment promotion',
-        category: 'Social Media Post',
+        category: 'Campaign Visual',
         client: 'Dental Consultant',
         image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.08_AM_45e9c5d8.jpeg',
         alt: 'Dental Consultant promotional post for orthodontic braces and aligners',
@@ -184,7 +180,7 @@ export const portfolioContent = {
         id: 'post-services-flyer',
         title: 'Complete services flyer',
         caption: 'Complete services flyer',
-        category: 'Flyer',
+        category: 'Clinic Flyer',
         client: 'Dental Consultant',
         image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.05_AM_f601db37.jpeg',
         alt: 'Dental Consultant complete services flyer featuring treatments and clinic contact details',
@@ -211,7 +207,7 @@ export const portfolioContent = {
         id: 'post-zr-flyer',
         title: 'Clinic services & specialist flyer',
         caption: 'Clinic services & specialist flyer',
-        category: 'Flyer',
+        category: 'Clinic Flyer',
         client: 'ZR Dental Clinic',
         image: '/assets/aistudio/WhatsApp_Image_2026-11-25_at_8.16.05_AM__1__04ccef7f.jpeg',
         alt: 'ZR Dental Clinic services flyer featuring Dr. Muhammad Abdullah and treatments',
@@ -255,9 +251,9 @@ export const portfolioContent = {
   },
 
   experience: {
-    heading: 'Experience',
+    heading: 'Career Timeline',
     intro:
-      'Chronological track record across university quality assurance, school administration, teaching, and digital services.',
+      'Verified track record across university quality assurance, school administration, Computer Science teaching, and freelance digital engineering.',
     items: [
       {
         id: 'exp-must',
@@ -320,8 +316,8 @@ export const portfolioContent = {
   },
 
   contact: {
-    heading: 'Get in Touch',
+    heading: "Let's Work Together",
     intro:
-      'Open to Academic Coordinator, QEC, and School Administration opportunities in Gujrat, as well as freelance web development, social media management, and design projects.',
+      'Available for web development, creative design, and academic coordination opportunities. Reach out directly via email, phone, or WhatsApp.',
   },
 };

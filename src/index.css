@@ -1,20 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
 }
 
 @layer base {
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 5.25rem;
+    background-color: #FAFAFC;
+    color: #111827;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 7s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: floatReverse 8.5s ease-in-out infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {
