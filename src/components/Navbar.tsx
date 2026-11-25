@@ -46,12 +46,12 @@ export function Navbar() {
   }, [links]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#E6E8EF]/85 bg-white/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B1020]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6 lg:px-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <a
           href="#top"
-          className="font-display text-lg font-bold tracking-tight text-[#111827] whitespace-nowrap shrink-0 transition-colors hover:text-[#7657E8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7657E8]"
+          className="font-display text-lg font-bold tracking-tight text-[#F8FAFC] whitespace-nowrap shrink-0 transition-colors hover:text-[#A78BFA] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7047EB]"
         >
           {brand}
         </a>
@@ -67,16 +67,16 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`relative whitespace-nowrap shrink-0 py-1.5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7657E8] ${
+                className={`relative whitespace-nowrap shrink-0 py-1.5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7047EB] ${
                   isActive
-                    ? 'text-[#111827] font-semibold'
-                    : 'text-slate-600 hover:text-[#7657E8]'
+                    ? 'text-[#F8FAFC] font-semibold'
+                    : 'text-[#AAB6CC] hover:text-[#F8FAFC]'
                 }`}
               >
                 {item.label}
                 <span
                   aria-hidden="true"
-                  className={`absolute right-0 bottom-0 left-0 h-0.5 rounded-full bg-[#7657E8] transition-transform duration-200 origin-left ${
+                  className={`absolute right-0 bottom-0 left-0 h-0.5 rounded-full bg-gradient-to-r from-[#7047EB] to-[#2583F7] transition-transform duration-200 origin-left ${
                     isActive ? 'scale-x-100' : 'scale-x-0'
                   }`}
                 />
@@ -89,7 +89,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           <a
             href={cta.href}
-            className="hidden sm:inline-flex items-center justify-center rounded-lg bg-[#111827] px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7657E8] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+            className="hidden sm:inline-flex items-center justify-center rounded-xl border border-[#7047EB]/50 bg-gradient-to-r from-[#7047EB] to-[#2583F7] px-4 py-2 text-sm font-semibold text-[#F8FAFC] shadow-[0_8px_24px_-6px_rgba(112,71,235,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgba(37,131,247,0.6)] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
           >
             {cta.label}
           </a>
@@ -99,7 +99,7 @@ export function Navbar() {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#E6E8EF] bg-white text-[#111827] transition-colors hover:border-[#7657E8]/40 hover:bg-[#EEE9FF]/40 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#111A2E] text-[#F8FAFC] transition-colors hover:border-[#7047EB]/50 hover:bg-[#172238] md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7047EB]"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -109,7 +109,7 @@ export function Navbar() {
       {mobileOpen && (
         <nav
           aria-label="Mobile navigation"
-          className="border-t border-[#E6E8EF] bg-white px-4 py-4 shadow-lg md:hidden"
+          className="border-t border-white/10 bg-[#111A2E] px-4 py-4 shadow-2xl md:hidden"
         >
           <div className="flex flex-col gap-1">
             {links.map((item) => {
@@ -119,10 +119,10 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`flex min-h-[44px] items-center rounded-lg px-3 text-base font-medium transition-colors ${
+                  className={`flex min-h-[44px] items-center rounded-xl px-3.5 text-base font-medium transition-colors ${
                     isActive
-                      ? 'bg-[#EEE9FF]/70 text-[#7657E8] font-semibold'
-                      : 'text-slate-700 hover:bg-[#FAFAFC] hover:text-[#7657E8]'
+                      ? 'bg-[#7047EB]/20 text-[#A78BFA] font-semibold'
+                      : 'text-[#AAB6CC] hover:bg-[#172238] hover:text-[#F8FAFC]'
                   }`}
                 >
                   {item.label}
@@ -132,7 +132,7 @@ export function Navbar() {
             <a
               href={cta.href}
               onClick={() => setMobileOpen(false)}
-              className="mt-2 flex min-h-[44px] items-center justify-center rounded-lg bg-[#111827] px-4 py-2.5 text-base font-semibold text-white transition-colors hover:bg-[#7657E8]"
+              className="mt-2 flex min-h-[44px] items-center justify-center rounded-xl bg-gradient-to-r from-[#7047EB] to-[#2583F7] px-4 py-2.5 text-base font-semibold text-[#F8FAFC]"
             >
               {cta.label}
             </a>

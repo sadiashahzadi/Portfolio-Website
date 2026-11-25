@@ -92,21 +92,21 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={currentItem.title}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-3 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B1020]/90 p-3 backdrop-blur-md sm:p-6"
       onClick={onClose}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="relative flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-slate-800 bg-white shadow-2xl"
+        className="relative flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#111A2E] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 border-b border-slate-200 px-4 py-3 sm:px-5 sm:py-3.5">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-3.5">
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-slate-900 sm:text-base">
+            <p className="truncate text-sm font-semibold text-[#F8FAFC] sm:text-base">
               {currentItem.title}
             </p>
-            <p className="truncate text-xs text-slate-500">
+            <p className="truncate text-xs text-[#AAB6CC]">
               {currentItem.client
                 ? `${currentItem.client} · ${currentItem.category}`
                 : currentItem.category}
@@ -115,7 +115,7 @@ export function Lightbox({
 
           <div className="flex items-center gap-2 shrink-0">
             {items.length > 1 && (
-              <span className="font-mono text-xs tabular-nums text-slate-500">
+              <span className="font-mono text-xs tabular-nums text-[#AAB6CC]">
                 {activeIndex + 1} / {items.length}
               </span>
             )}
@@ -123,14 +123,14 @@ export function Lightbox({
               type="button"
               onClick={onClose}
               aria-label="Close preview"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/12 bg-[#172238] text-[#F8FAFC] transition-colors hover:border-[#7047EB]/50 hover:text-[#A78BFA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
         </div>
 
-        <div className="relative flex flex-1 items-center justify-center overflow-auto bg-slate-950/95 p-3 sm:p-6">
+        <div className="relative flex flex-1 items-center justify-center overflow-auto bg-[#0B1020] p-3 sm:p-6">
           <img
             src={currentItem.image}
             alt={currentItem.alt}
@@ -144,7 +144,7 @@ export function Lightbox({
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous post"
-                className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+                className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#172238]/95 text-[#F8FAFC] shadow-lg transition-transform hover:scale-105 hover:border-[#7047EB]/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -152,7 +152,7 @@ export function Lightbox({
                 type="button"
                 onClick={handleNext}
                 aria-label="Next post"
-                className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#172238]/95 text-[#F8FAFC] shadow-lg transition-transform hover:scale-105 hover:border-[#7047EB]/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>

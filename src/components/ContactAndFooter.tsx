@@ -58,16 +58,16 @@ export function ContactAndFooter() {
       {/* CONTACT SECTION */}
       <section
         id="contact"
-        className="relative overflow-hidden border-t border-[#E6E8EF] bg-white py-20 sm:py-24"
+        className="relative overflow-hidden border-t border-white/10 bg-[#111A2E] py-20 sm:py-24"
       >
-        {/* Subtle Ambient Background Decoration */}
+        {/* Subtle Ambient Orbs */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#EEE9FF]/60 blur-3xl"
+          className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#7047EB]/18 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-[#0F8178]/10 blur-3xl"
+          className="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-[#2583F7]/15 blur-3xl"
         />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -75,23 +75,25 @@ export function ContactAndFooter() {
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
               {/* Left Side: Heading, Invitation, Contact Cards, WhatsApp CTA */}
               <div className="lg:col-span-5">
-                <p className="text-sm font-semibold tracking-wide text-[#7657E8]">
+                <p className="text-sm font-semibold tracking-wide text-[#A78BFA]">
                   Contact
                 </p>
-                <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
-                  {contact.heading}
+                <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                  <span className="bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC] to-[#60A5FA] bg-clip-text text-transparent">
+                    {contact.heading}
+                  </span>
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-slate-600">
+                <p className="mt-3 text-base leading-relaxed text-[#AAB6CC]">
                   {contact.intro}
                 </p>
 
                 <div className="mt-8 space-y-3.5">
-                  <div className="flex items-center justify-between gap-3 rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3.5 transition-colors hover:border-[#7657E8]/35">
+                  <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-[#172238]/85 px-4 py-3.5 transition-colors hover:border-[#7047EB]/45">
                     <a
                       href={`mailto:${contactInfo.email}`}
-                      className="flex min-w-0 items-center gap-3 text-sm font-medium text-[#111827] hover:text-[#7657E8]"
+                      className="flex min-w-0 items-center gap-3 text-sm font-medium text-[#F8FAFC] hover:text-[#A78BFA]"
                     >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEE9FF] text-[#7657E8]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#7047EB]/20 text-[#A78BFA]">
                         <Mail className="h-4 w-4" aria-hidden="true" />
                       </span>
                       <span className="truncate">{contactInfo.email}</span>
@@ -100,11 +102,11 @@ export function ContactAndFooter() {
                       type="button"
                       onClick={handleCopyEmail}
                       aria-label="Copy email address"
-                      className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-[#E6E8EF] bg-white px-2.5 text-xs font-medium text-slate-600 transition-colors hover:border-[#7657E8]/40 hover:text-[#7657E8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+                      className="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-lg border border-white/12 bg-[#111A2E] px-2.5 text-xs font-medium text-[#AAB6CC] transition-colors hover:border-[#7047EB]/50 hover:text-[#F8FAFC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
                     >
                       {copiedEmail ? (
                         <>
-                          <Check className="h-3.5 w-3.5 text-[#0F8178]" />
+                          <Check className="h-3.5 w-3.5 text-[#60A5FA]" />
                           <span>Copied</span>
                         </>
                       ) : (
@@ -118,16 +120,16 @@ export function ContactAndFooter() {
 
                   <a
                     href={`tel:${contactInfo.phone.replace(/[^+\d]/g, '')}`}
-                    className="flex items-center gap-3 rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3.5 text-sm font-medium text-[#111827] transition-colors hover:border-[#7657E8]/35 hover:text-[#7657E8]"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#172238]/85 px-4 py-3.5 text-sm font-medium text-[#F8FAFC] transition-colors hover:border-[#7047EB]/45 hover:text-[#A78BFA]"
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEE9FF] text-[#7657E8]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2583F7]/20 text-[#60A5FA]">
                       <Phone className="h-4 w-4" aria-hidden="true" />
                     </span>
                     <span className="tabular-nums">{contactInfo.phone}</span>
                   </a>
 
-                  <div className="flex items-center gap-3 rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3.5 text-sm font-medium text-slate-700">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0F8178]/10 text-[#0F8178]">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#172238]/85 px-4 py-3.5 text-sm font-medium text-[#AAB6CC]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#7047EB]/20 text-[#A78BFA]">
                       <MapPin className="h-4 w-4" aria-hidden="true" />
                     </span>
                     <span>{contactInfo.location}</span>
@@ -139,7 +141,7 @@ export function ContactAndFooter() {
                     href={contactInfo.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[#0F8178] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(15,129,120,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0D6E66] whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F8178]"
+                    className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl border border-[#2583F7]/40 bg-[#172238] px-6 py-3 text-sm font-semibold text-[#F8FAFC] shadow-[0_10px_24px_-10px_rgba(37,131,247,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2583F7] hover:bg-[#2583F7] whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#60A5FA]"
                   >
                     <MessageCircle className="h-4 w-4" aria-hidden="true" />
                     <span>WhatsApp me</span>
@@ -147,17 +149,17 @@ export function ContactAndFooter() {
                 </div>
               </div>
 
-              {/* Right Side: Elevated Contact Form Card */}
+              {/* Right Side: Dark Glass Contact Form Card */}
               <div className="lg:col-span-7">
                 <form
                   onSubmit={handleSubmit}
-                  className="rounded-3xl border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_46px_-18px_rgba(17,24,39,0.1)] sm:p-8 lg:p-9"
+                  className="rounded-3xl border border-white/12 bg-[#172238]/85 p-6 shadow-[0_24px_56px_-18px_rgba(0,0,0,0.6)] backdrop-blur-md sm:p-8 lg:p-9"
                   noValidate
                 >
-                  <h3 className="font-display text-2xl font-bold text-[#111827]">
+                  <h3 className="font-display text-2xl font-bold text-[#F8FAFC]">
                     Send a Message
                   </h3>
-                  <p className="mt-1.5 text-sm text-slate-600">
+                  <p className="mt-1.5 text-sm text-[#AAB6CC]">
                     Complete the form below to open a pre-filled draft in your
                     default email client.
                   </p>
@@ -166,7 +168,7 @@ export function ContactAndFooter() {
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="block text-sm font-medium text-[#111827]"
+                        className="block text-sm font-medium text-[#F8FAFC]"
                       >
                         Name
                       </label>
@@ -178,14 +180,14 @@ export function ContactAndFooter() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Your full name"
-                        className="mt-2 block w-full rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3 text-sm text-[#111827] placeholder:text-slate-400 transition-colors focus:border-[#7657E8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#7657E8]/20"
+                        className="mt-2 block w-full rounded-xl border border-white/12 bg-[#0B1020]/85 px-4 py-3 text-sm text-[#F8FAFC] placeholder:text-[#AAB6CC]/50 transition-colors focus:border-[#7047EB] focus:bg-[#0B1020] focus:outline-none focus:ring-2 focus:ring-[#7047EB]/35"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="block text-sm font-medium text-[#111827]"
+                        className="block text-sm font-medium text-[#F8FAFC]"
                       >
                         Email
                       </label>
@@ -197,7 +199,7 @@ export function ContactAndFooter() {
                         value={senderEmail}
                         onChange={(e) => setSenderEmail(e.target.value)}
                         placeholder="you@example.com"
-                        className="mt-2 block w-full rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3 text-sm text-[#111827] placeholder:text-slate-400 transition-colors focus:border-[#7657E8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#7657E8]/20"
+                        className="mt-2 block w-full rounded-xl border border-white/12 bg-[#0B1020]/85 px-4 py-3 text-sm text-[#F8FAFC] placeholder:text-[#AAB6CC]/50 transition-colors focus:border-[#7047EB] focus:bg-[#0B1020] focus:outline-none focus:ring-2 focus:ring-[#7047EB]/35"
                       />
                     </div>
                   </div>
@@ -205,7 +207,7 @@ export function ContactAndFooter() {
                   <div className="mt-5">
                     <label
                       htmlFor="contact-message"
-                      className="block text-sm font-medium text-[#111827]"
+                      className="block text-sm font-medium text-[#F8FAFC]"
                     >
                       Message
                     </label>
@@ -217,14 +219,14 @@ export function ContactAndFooter() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Share details about the opportunity or project..."
-                      className="mt-2 block w-full rounded-xl border border-[#E6E8EF] bg-[#FAFAFC] px-4 py-3 text-sm text-[#111827] placeholder:text-slate-400 transition-colors focus:border-[#7657E8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#7657E8]/20"
+                      className="mt-2 block w-full rounded-xl border border-white/12 bg-[#0B1020]/85 px-4 py-3 text-sm text-[#F8FAFC] placeholder:text-[#AAB6CC]/50 transition-colors focus:border-[#7047EB] focus:bg-[#0B1020] focus:outline-none focus:ring-2 focus:ring-[#7047EB]/35"
                     />
                   </div>
 
                   {formNotice && (
                     <p
                       role="alert"
-                      className="mt-4 rounded-xl border border-[#7657E8]/30 bg-[#EEE9FF]/50 px-4 py-2.5 text-sm font-medium text-[#111827]"
+                      className="mt-4 rounded-xl border border-[#7047EB]/40 bg-[#7047EB]/15 px-4 py-2.5 text-sm font-medium text-[#F8FAFC]"
                     >
                       {formNotice}
                     </p>
@@ -233,7 +235,7 @@ export function ContactAndFooter() {
                   <div className="mt-6">
                     <button
                       type="submit"
-                      className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[#111827] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7657E8] whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7657E8]"
+                      className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7047EB] to-[#2583F7] px-6 py-3 text-sm font-semibold text-[#F8FAFC] shadow-[0_12px_30px_-8px_rgba(112,71,235,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-6px_rgba(37,131,247,0.7)] whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A78BFA]"
                     >
                       <Send className="h-4 w-4" aria-hidden="true" />
                       <span>Open Email App</span>
@@ -247,33 +249,33 @@ export function ContactAndFooter() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#E6E8EF] bg-[#FAFAFC] py-10">
+      <footer className="border-t border-white/10 bg-[#0B1020] py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <div>
-            <p className="font-display text-sm font-bold text-[#111827]">
+            <p className="font-display text-sm font-bold text-[#F8FAFC]">
               Sadia Shahzadi
             </p>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-[#AAB6CC]">
               © {currentYear} Sadia Shahzadi. All rights reserved.
             </p>
           </div>
 
           <nav
             aria-label="Footer navigation"
-            className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600"
+            className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#AAB6CC]"
           >
             {navigation.links.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="transition-colors hover:text-[#7657E8]"
+                className="transition-colors hover:text-[#A78BFA]"
               >
                 {item.label}
               </a>
             ))}
             <a
               href={`mailto:${contactInfo.email}`}
-              className="font-medium text-[#111827] transition-colors hover:text-[#7657E8]"
+              className="font-medium text-[#F8FAFC] transition-colors hover:text-[#A78BFA]"
             >
               {contactInfo.email}
             </a>
